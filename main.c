@@ -10,8 +10,8 @@
 #define ERR "\033[0;31m[ERROR]\033[0m"
 #define WARN "\033[0;33m[WARN]\033[0m"
 
-// Token Enum
-enum t_token
+// Token Type Enum
+enum token_type
 {
     NONE,
     DONE,
@@ -66,9 +66,8 @@ int symbolInsert(char str[])
 
 // Strings Buffer
 char str_buff[10000];
-int lp_str_buff = 0; //last position in str_buff
+int lp_str_buff = 0; // last position in str_buff
 
-// Testing Functions
 int testKeyword(char str[])
 {
     for (int i = 0; i < 15; i++)
@@ -76,7 +75,8 @@ int testKeyword(char str[])
         if (strcmp(str, keywords[i]) == 0)
             return i + 1;
     }
-    return 0; //if none matched return zero
+    //if none matched return zero
+    return 0;
 }
 
 int testGeneral(char c, char const charset[])
@@ -92,7 +92,7 @@ int testGeneral(char c, char const charset[])
 FILE *fp;
 int line_no = 1;
 
-void lex(int *tokenValue, enum t_token *tokenType)
+void lex(int *tokenValue, enum token_type *tokenType)
 {
     while (1)
     {
@@ -147,7 +147,7 @@ void lex(int *tokenValue, enum t_token *tokenType)
             buff[bi] = '\0'; //mark end of string
             ungetc(ch, fp);
 
-            //keyword
+            // keyword
             int k = testKeyword(buff);
             if (k)
             {
@@ -426,7 +426,7 @@ void lex(int *tokenValue, enum t_token *tokenType)
             return;
         }
 
-        //delimiters
+        // delimiters
         if (testGeneral(ch, delimiters))
         {
             *tokenValue = ch;
@@ -439,7 +439,7 @@ void lex(int *tokenValue, enum t_token *tokenType)
     }
 }
 
-void printToken(int *tokenValue, enum t_token *tokenType)
+void printToken(int *tokenValue, enum token_type *tokenType)
 {
     switch (*tokenType)
     {
@@ -498,7 +498,7 @@ int main(int argc, char *argv[])
     }
 
     printf("%s performing lexical analysis ... %s\n", YEL, NC);
-    enum t_token tokenType = NONE;
+    enum token_type tokenType = NONE;
     int tokenValue;
     while (tokenType != DONE)
     {
