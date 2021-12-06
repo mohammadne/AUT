@@ -1,4 +1,4 @@
-# B-minor-Compiler
+# Compiler for B-minor language
 
 <!-- LOGO -->
 <p align="center">
