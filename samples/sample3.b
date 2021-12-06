@@ -1,32 +1,30 @@
-intFunction: function integer(intVar:integer, boolVar: boolean)
-{
-	if(boolVar)
-	{
-		intVar = intVar * 2;
-	}
-	return intVar;
-}
-// finds the largest value in the array
-getLargest: function integer(intArrVar:array [] integer, int len) =
-{
-	largest:integer = 0;
-	x:integer;
-	for(x = 0; x < len; x++)
-	{
-		if(intArrVar[x] > largest)
-		{
-			largest = intArrVar[x];
-		}
-	}
-	return largest;
+// source: https://github.com/dthain/compilerbook-examples/tree/master/tests/parser
 
+// test function calls
+func1: function integer (x:integer, y:char) =
+{
+	print x;
+	return 1;
+}
+func2: function integer (y:char) =
+{
+	print x;
+	return 2;
+}
+func3: function integer (x:integer, y:char, z:string)=
+{
+	print z;
+	return 4;
 }
 
-main: function integer ( argc: integer, argv: array [] string ) =
+main: function void ()=
 {
-	b:array [10] integer = {0,1,2,3,4,5};
-	b[4] = 6;
-	i:integer;
-	z:integer = intFunction(i, true);
-	print intArrFunction(v, z);
+	x:integer = 4;
+	y:char = 'c';
+	z:string = "hello";
+	func2('c');
+	func2(y);
+	func1(42, y);
+	func1(x, 'c');
+	func3(4, y, z);
 }

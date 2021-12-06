@@ -1,5 +1,5 @@
-puts: function void ( s: string );
+// source: https://www3.nd.edu/~dthain/courses/cse40243/fall2019/bminor.html
 
-main: function integer () = {
-    puts("hello world");
+square: function integer ( x: integer ) = {
+	return x^2;
 }
