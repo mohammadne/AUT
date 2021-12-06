@@ -1,5 +1,10 @@
 # B-minor-Compiler
 
+<!-- LOGO -->
+<p align="center">
+  <img src="assets/logo.png" />
+</p>
+
 ## How to run (Linux)
 
 ``` zsh
