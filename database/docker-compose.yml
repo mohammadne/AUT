@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
  
 services:
   db:
@@ -9,4 +9,12 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./data:/var/lib/mysql
+      - type: bind
+        source: ./sql
+        target: /data/sql
+      - type: volume
+        source: mysql-volume
+        target: /var/lib/mysql
+
+volumes:
+  mysql-volume:
