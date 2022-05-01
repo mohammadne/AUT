@@ -1,0 +1,3 @@
+CREATE TABLE books_users(
+    id INT AUTO_INCREMENT PRIMARY KEY
+)

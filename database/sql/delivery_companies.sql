@@ -1,0 +1,3 @@
+CREATE TABLE delivery_companies(
+    id INT AUTO_INCREMENT PRIMARY KEY
+)

@@ -11,7 +11,9 @@ services:
     volumes:
       - type: bind
         source: ./sql
-        target: /data/sql
+        target: /data/sql        
+        read_only: true
+
       - type: volume
         source: mysql-volume
         target: /var/lib/mysql
