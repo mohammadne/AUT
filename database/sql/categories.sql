@@ -4,4 +4,4 @@ CREATE TABLE categories(
 );
 
 INSERT INTO categories (name) 
-VALUES ('action'), ('adventure'), ('classic'), ('horror'), ('mystery');
+VALUES ('network'), ('cloud'), ('linux'), ('database'), ('algorithm');
