@@ -10,8 +10,17 @@ CREATE TABLE comments(
     FOREIGN KEY(language_id) REFERENCES languages(id)
 )
 
-INSERT INTO books_categories(book_id, author_id) VALUES
-    (1, 2), (1, 3),
-    (2, 4),
-    (3, 5),
-    (4, 6);
+INSERT INTO comments(text, user_id, book_id, language_id) VALUES
+    ("best docker book that I have seen so far", 18, 1, 1),
+    ("most complete algorithm book", 18, 5, 1),
+
+    ("best book for learning sql", 19, 10, 1),
+    ("کتاب عالی برای یادگیری دیتابیس", 19, 8, 2),
+
+    ("المرحبا", 20, 2, 3),
+    ("تبارک الله", 20, 9, 3),
+    ("good cloud book", 20, 6, 1),
+    ("my second good cloud book", 20, 7, 1),
+
+    ("best computer system book", 21, 4, 1),
+    ("best linux book", 21, 3, 1);
