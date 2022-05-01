@@ -3,5 +3,5 @@ CREATE TABLE publishers(
     name VARCHAR(50)
 );
 
-INSERT INTO publishers (name) 
-VALUES ('Manning'), ('Pearson'), ('Oreilly'), ('Packt');
+INSERT INTO publishers (name) VALUES 
+    ('Manning'), ('Pearson'), ('Oreilly'), ('Packt');

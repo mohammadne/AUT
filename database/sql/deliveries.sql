@@ -6,3 +6,6 @@ CREATE TABLE deliveries(
     FOREIGN KEY(orders_id) REFERENCES orders(id),
     FOREIGN KEY(delivery_company_id) REFERENCES delivery_companies(id)
 );
+
+INSERT INTO deliveries (orders_id, delivery_company_id) VALUES
+    (1, 1);

@@ -6,3 +6,6 @@ CREATE TABLE payments(
     FOREIGN KEY(orders_id) REFERENCES orders(id),
     FOREIGN KEY(payment_status_id) REFERENCES payment_statuses(id)
 );
+
+INSERT INTO payments (orders_id, payment_status_id) VALUES
+    (1, 1), (2, 2);

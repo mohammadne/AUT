@@ -4,4 +4,4 @@ CREATE TABLE payment_statuses(
 );
 
 INSERT INTO payment_statuses (name) VALUES 
-    ('success'), ('waiting'), ('failed');
+    ('success'), ('failed');
