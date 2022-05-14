@@ -5,7 +5,7 @@ CREATE TABLE books_categories(
     category_id INT,
     FOREIGN KEY(book_id) REFERENCES books(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
-)
+);
 
 INSERT INTO books_categories(book_id, category_id) VALUES
     (1, 2), (1, 3),

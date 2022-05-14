@@ -5,7 +5,7 @@ CREATE TABLE contact_informations(
     phone VARCHAR(20),
     email VARCHAR(50),
     gender TinyINT,
-    address VARCHAR(100),
+    address VARCHAR(100)
 );
 
 INSERT INTO contact_informations (first_name, last_name, phone, email, gender, address) VALUES
@@ -26,7 +26,7 @@ INSERT INTO contact_informations (first_name, last_name, phone, email, gender, a
     ('Hyrum', 'Wright', '(342) 847-0042', 'hyrum.wright@email.com', 0, 'Brillion, Wisconsin(WI), 54110'),
     ('Alex', 'Petrov', '(807) 633-6428', 'alex.petrov@email.com', 1, 'Jewett City, Connecticut(CT), 06351'),
     ('Jonathan', 'Baier', '(587) 987-6195', 'jonathan.baier@email.com', 1, 'Caldwell, Idaho(ID), 83607'),
-    ('Anil', 'Batra', '(627) 998-7443', 'anil.batra@email.com', 1, 'Mc Lain, Mississippi(MS), 39456')
+    ('Anil', 'Batra', '(627) 998-7443', 'anil.batra@email.com', 1, 'Mc Lain, Mississippi(MS), 39456'),
 
     ('ali', 'tavakoli', '09204545667', 'ali.tavakoli@email.com', 1, 'Tehran, razmandegan'),
     ('reza', 'ahmadi', '09204545467', 'reza.ahmadi@email.com', 1, 'Mashhad, Emam Reza'),

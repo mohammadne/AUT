@@ -1,11 +1,11 @@
 CREATE TABLE books_users(
     id INT AUTO_INCREMENT PRIMARY KEY,
 
-    book_id INT,
-    author_id INT,
+    book_id INT NOT NULL,
+    author_id INT NOT NULL,
     FOREIGN KEY(book_id) REFERENCES books(id),
     FOREIGN KEY(author_id) REFERENCES users(id)
-)
+);
 
 -- Docker in action -> Jeffrey Nickoloff, Stephen Kuenzli
 -- Kubernetes in action -> Marko Luksa

@@ -1,5 +1,7 @@
 # Precedence
 
+- level of each group doesn't matter
+
 ## level 1
 
 roles
@@ -12,7 +14,7 @@ payment_statuses
 
 ## level 2
 
-users (roles, contacts)
+users (roles, contact_informations)
 books (publisher, language)
 
 ## level 3
@@ -24,5 +26,6 @@ orders (users)
 
 ## level 4
 
-order_item (orders, books)
-payment (payment_statuses, orders)
+order_items (orders, books)
+payments (payment_statuses, orders)
+deliveries (orders, delivery_companies)
