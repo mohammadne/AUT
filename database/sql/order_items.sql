@@ -9,5 +9,5 @@ CREATE TABLE order_items(
 );
 
 INSERT INTO order_items (count, book_id, order_id) VALUES
-    (1, 2, 1), (2, 5, 1)
+    (1, 2, 1), (2, 5, 1),
     (1, 8, 2);

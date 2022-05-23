@@ -21,7 +21,7 @@ CREATE TABLE books_users(
 -- Complete Kubernetes Stack -> Jonathan Baier
 -- SQL Fundamentals -> Anil Batra
 
-INSERT INTO books_categories(book_id, author_id) VALUES
+INSERT INTO books_users(book_id, author_id) VALUES
     (1, 2), (1, 3),
     (2, 4),
     (3, 5),

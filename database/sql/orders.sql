@@ -5,5 +5,5 @@ CREATE TABLE orders(
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-INSERT INTO books (user_id) VALUES
+INSERT INTO orders (user_id) VALUES
     (19), (21);

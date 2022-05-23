@@ -8,7 +8,7 @@ CREATE TABLE comments(
     FOREIGN KEY(user_id) REFERENCES users(id),
     FOREIGN KEY(book_id) REFERENCES books(id),
     FOREIGN KEY(language_id) REFERENCES languages(id)
-)
+);
 
 INSERT INTO comments(text, user_id, book_id, language_id) VALUES
     ("best docker book that I have seen so far", 18, 1, 1),
