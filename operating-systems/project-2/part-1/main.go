@@ -9,6 +9,10 @@ import (
 
 const size = 1000
 
+type channel struct {
+	row, column, value int
+}
+
 func main() {
 	start1 := time.Now()
 
@@ -21,12 +25,24 @@ func main() {
 	// -----------------------------------------------------------------
 
 	start2 := time.Now()
-	sumMatrix := multiply(matrix1, matrix2, size)
+
+	ch := make(chan channel, size)
+	go multiply(matrix1, matrix2, size, ch)
+
+	// initialize result matrix
+	result := make([][]int, size)
+	for row := 0; row < size; row++ {
+		result[row] = make([]int, size)
+	}
+
+	// do multiplication
+	for index := 0; index < size*size; index++ {
+		message := <-ch
+		result[message.row][message.column] = message.value
+	}
 
 	elapsed2 := time.Since(start2)
 	fmt.Printf("time took for multiplication: %s\n", elapsed2)
-
-	_ = sumMatrix
 }
 
 func generateMatrix(size int) [][]int {
@@ -44,33 +60,22 @@ func generateMatrix(size int) [][]int {
 	return matrix
 }
 
-func multiply(matrix1, matrix2 [][]int, size int) [][]int {
-	// initialize result
-	result := make([][]int, size)
-
-	// WaitGroup are ways to synchronize green threads
+func multiply(matrix1, matrix2 [][]int, size int, ch chan channel) {
 	var wg sync.WaitGroup
 	wg.Add(size * size)
 
 	for row := 0; row < size; row++ {
 		for column := 0; column < size; column++ {
-			result[row] = make([]int, size)
-
 			go func(row, column int) {
-				result[row][column] = 0
+				value := 0
 				for iterator := 0; iterator < size; iterator++ {
-					result[row][column] += matrix1[row][iterator] * matrix2[iterator][column]
+					value += matrix1[row][iterator] * matrix2[iterator][column]
 				}
+				ch <- channel{row: row, column: column, value: value}
 				wg.Done()
 			}(row, column)
 		}
 	}
 
 	wg.Wait()
-
-	return result
 }
-
-// type channel struct {
-// 	row, column, value int
-// }
