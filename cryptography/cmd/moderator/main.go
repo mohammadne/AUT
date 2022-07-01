@@ -7,6 +7,7 @@ import (
 	"github.com/mohammadne/university/cryptography/internal/network"
 	"github.com/mohammadne/university/cryptography/pkg/logger"
 	"github.com/spf13/cobra"
+	"go.uber.org/zap"
 )
 
 const (
@@ -26,4 +27,7 @@ func main(cfg *config.Config, trap chan os.Signal) {
 	alice := network.NewClient(cfg.Alice, log)
 	bob := network.NewClient(cfg.Bob, log)
 	_, _ = alice, bob
+
+	field := zap.String("signal trap", (<-trap).String())
+	log.Info("exiting by recieving a unix signal", field)
 }
