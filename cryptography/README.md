@@ -1,5 +1,19 @@
 # Cryptography
 
+<!-- LOGO -->
+<p align="center">
+  <img src="contracts/logo.jpg" />
+</p>
+
+<!-- BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/github/release/mohammadne/university.svg?style=for-the-badge">
+  <img src="https://img.shields.io/codecov/c/gh/mohammadne/university?logo=codecov&style=for-the-badge">
+  <img src="https://img.shields.io/github/license/mohammadne/university?style=for-the-badge">
+  <img src="https://img.shields.io/github/stars/mohammadne/university?style=for-the-badge">
+  <img src="https://img.shields.io/github/downloads/mohammadne/university/total.svg?style=for-the-badge">
+</p>
+
 ## How it works
 
 > here we are using 3 gRPC servers responsible for `Alice`, `Bob` and `Eve`.
