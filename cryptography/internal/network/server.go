@@ -12,13 +12,13 @@ import (
 
 type server struct {
 	config *Config
-	logger zap.Logger
+	logger *zap.Logger
 
 	server *grpc.Server
 	models.UnimplementedGreeterServer
 }
 
-func NewServer(cfg *Config, log zap.Logger) *server {
+func NewServer(cfg *Config, log *zap.Logger) *server {
 	s := &server{config: cfg, logger: log}
 
 	s.server = grpc.NewServer()

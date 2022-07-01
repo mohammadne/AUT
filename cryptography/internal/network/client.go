@@ -11,12 +11,12 @@ import (
 
 type client struct {
 	config *Config
-	logger zap.Logger
+	logger *zap.Logger
 
 	c models.GreeterClient
 }
 
-func NewClient(cfg *Config, log zap.Logger) *client {
+func NewClient(cfg *Config, log *zap.Logger) *client {
 	c := &client{config: cfg, logger: log}
 
 	Address := fmt.Sprintf("%s:%s", cfg.Host, cfg.Port)
@@ -30,7 +30,7 @@ func NewClient(cfg *Config, log zap.Logger) *client {
 }
 
 func (c *client) someFunc() {
-	req := models.HelloRequest{}
+	req := models.HelloRequest{Name: "Mohammad"}
 	res, err := c.c.SayHello(context.Background(), &req)
 	if err != nil {
 		c.logger.Error("error", zap.Error(err))
