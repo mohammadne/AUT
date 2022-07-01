@@ -22,11 +22,11 @@ func NewClient(cfg *Config, log zap.Logger) *client {
 	Address := fmt.Sprintf("%s:%s", cfg.Host, cfg.Port)
 	connection, err := grpc.Dial(Address, grpc.WithInsecure())
 	if err != nil {
-		return nil, err
+		log.Fatal("", zap.Error(err))
 	}
 	c.c = models.NewGreeterClient(connection)
 
-	return c, nil
+	return c
 }
 
 func (c *client) someFunc() {
