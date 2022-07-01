@@ -4,25 +4,21 @@ package service;
 
 message Empty {}
 
-message PublicKey {
-  string value = 1;
-}
+message PublicKey { string value = 1; }
+
+message Message { string value = 1; }
 
 
 service Service {
-  rpc GenAndSendPublicKey (Empty) returns (PublicKey) {}
-  rpc SetRemotePublicKey (PublicKey) returns (Empty) {}
+  // used for encryption and decryption
+  rpc GenAndSendAsymetricPublicKey (Empty) returns (PublicKey) {}
+  rpc SetRemoteAsymetricPublicKey (PublicKey) returns (Empty) {}
+  
+  // used for signing and verify the signiture
+  rpc GenAndSendSigniturePublicKey (Empty) returns (PublicKey) {}
+  rpc SetRemoteSigniturePublicKey (PublicKey) returns (Empty) {}
 
-  // Sends another greeting
-  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
-}
-
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+  // Sends another greeting (encrypted message to be decrypted)
+  rpc SendRandomEncryptedMessage (Empty) returns (Message) {}
+  rpc RecieveRandomEncryptedMessage (Message) returns (Empty) {}
 }
