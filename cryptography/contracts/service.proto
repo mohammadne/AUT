@@ -1,11 +1,18 @@
 syntax = "proto3";
 option go_package = "internal/models";
-package chat;
+package service;
 
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+message Empty {}
+
+message PublicKey {
+  string value = 1;
+}
+
+
+service Service {
+  rpc GenAndSendPublicKey (Empty) returns (PublicKey) {}
+  rpc SetRemotePublicKey (PublicKey) returns (Empty) {}
+
   // Sends another greeting
   rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
 }
