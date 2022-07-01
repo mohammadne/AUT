@@ -26,7 +26,10 @@
 >
 > the key genertion scenario is on the fly and we don't use any predefing key and the key for each run is different from the pre-run.
 >
-> the [architecture](https://viewer.diagrams.net/?tags=%7B%7D&highlight=FFFFFF&edit=_blank&layers=1&nav=1&title=drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fmohammadne%2Funiversity%2Fmaster%2Fcryptography%2Fcontracts%2Farchitecture.drawio) for transefering each message has been drawn here. (click the highlighted link)
+> the [architecture](https://viewer.diagrams.net/?tags=%7B%7D&highlight=FFFFFF&edit=_blank&layers=1&nav=1&title=drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fmohammadne%2Funiversity%2Fmaster%2Fcryptography%2Fcontracts%2Farchitecture.drawio) for transefering each message has been drawn here. (click the highlighted link).
+> this is almost the same as `TLS` protocol for `HTTP` and can be used for `Bob` vice versa.
+>
+> the start flow is like boss-worker design that the moderator will commands the gRPC servers to take the action.
 
 ## protocol-buffer tools
 
