@@ -8,7 +8,7 @@ model.x111 = pyo.Var(domain=pyo.NonNegativeReals)
 model.x112 = pyo.Var(domain=pyo.NonNegativeReals)
 model.x121 = pyo.Var(domain=pyo.NonNegativeReals)
 model.x122 = pyo.Var(domain=pyo.NonNegativeReals)
-model.z = pyo.Var(domain=pyo.NonNegativeReals)  # transfer
+model.z = pyo.Var(domain=pyo.NonNegativeReals)
 model.b1 = pyo.Var(domain=pyo.NonNegativeReals)
 model.b2 = pyo.Var(domain=pyo.NonNegativeReals)
 model.x211 = pyo.Var(domain=pyo.NonNegativeReals)
@@ -35,8 +35,8 @@ model.const4 = pyo.Constraint(expr=model.x112+model.x122 <= 1000)
 model.const5 = pyo.Constraint(expr=model.z <= 2000 - model.x121 - model.x122)
 
 # initial values for second month
-model.const6 = pyo.Constraint(expr=model.x211+model.x212 == model.b1)
-model.const7 = pyo.Constraint(expr=model.x221+model.x222 == model.b2 + model.z)
+model.const6 = pyo.Constraint(expr=model.x211+model.x212 == model.b1+model.z)
+model.const7 = pyo.Constraint(expr=model.x221+model.x222 == model.b2)
 
 # second month sales
 model.const8 = pyo.Constraint(expr=model.x211+model.x221 <= 2000)
